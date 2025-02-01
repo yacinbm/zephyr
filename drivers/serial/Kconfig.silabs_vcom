@@ -1,0 +1,10 @@
+# Copyright (c) 2025, Yacin Belmihoub-Martel
+# SPDX-License-Identifier: Apache-2.0
+
+config UART_SILABS_VCOM
+	bool "Silabs VCOM auto config"
+	default y
+	select GPIO
+	depends on DT_HAS_SILABS_VCOM_UART_ENABLED
+	help
+	  Enable Virtual COM port configuration over ITM.

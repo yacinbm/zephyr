@@ -1,0 +1,11 @@
+description: Silabs VCOM UART
+
+compatible: "silabs,vcom-uart"
+
+include: uart-device.yaml
+
+properties:
+  en-gpios:
+    type: phandle-array
+    required: true
+    description: Pin used to enable VCOM adapter.

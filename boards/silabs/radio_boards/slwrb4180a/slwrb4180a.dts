@@ -112,6 +112,12 @@
 	pinctrl-0 = <&usart0_default>;
 	pinctrl-names = "default";
 	status = "okay";
+
+	vcom {
+		compatible = "silabs,vcom-uart";
+		en-gpios = <&gpiod 4 (GPIO_ACTIVE_HIGH | GPIO_PUSH_PULL)>;
+		status = "okay";
+	};
 };
 
 &rtcc0 {
@@ -137,12 +143,6 @@
 
 &gpiod {
 	status = "okay";
-
-	board-controller-enable {
-		gpio-hog;
-		gpios = <4 GPIO_ACTIVE_HIGH>;
-		output-high;
-	};
 };
 
 &wdog0 {
